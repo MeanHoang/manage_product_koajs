@@ -1,0 +1,36 @@
+<h2>Cập nhập thông tin sản phẩm</h2>
+<!-- <%= JSON.stringify(product) %> -->
+
+<form action="/update/<%=product.id%>" method="POST">
+  <div>
+    <label>Name:</label>
+    <input type="text" name="name" value="<%=product.name%>" required />
+  </div>
+
+  <div>
+    <label>Price:</label>
+    <input type="number" name="price" value="<%=product.price%>" />
+  </div>
+
+  <div>
+    <label>Description:</label>
+    <input type="text" name="description" value="<%=product.description%>" />
+  </div>
+
+  <div>
+    <label>Product:</label>
+    <input type="text" name="product" value="<%=product.product%>" />
+  </div>
+
+  <div>
+    <label>Color:</label>
+    <input type="text" name="color" value="<%=product.color%>" />
+  </div>
+
+  <div>
+    <label>Link image:</label>
+    <input type="text" name="image" value="<%=product.image%>" />
+  </div>
+  <button type="submit">Cập nhập sản phẩm</button>
+  <a href="/products"><button type="button">Hủy</button></a>
+</form>

@@ -1,0 +1,48 @@
+<h2>Danh sách sản phẩm</h2>
+<!-- <%= JSON.stringify(products) %> -->
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach((product) => { %>
+    <tr>
+      <td><%=product.id%></td>
+      <td><%= product.name %></td>
+      <td><%= product.price %> $</td>
+      <td><img src="<%= product.image %>" width="80" /></td>
+      <td>
+        <a href="/update/<%= product.id %>">Update</a>
+        <a href="/delete/<%= product.id %>">Delete</a>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+<a href="/add-product">Add new product</a>
+<div>
+  <p>
+    Trang <%= page %> / <%= totalPage %> — Tổng số sản phẩm: <%= totalItem %>
+  </p>
+
+  <div class="pagination">
+    <% if (page > 1) { %>
+    <a href="?page=<%= page - 1 %>&limit=<%= limit %>&sort=<%= sort %>"
+      >Trang trước</a
+    >
+
+    <% } %> <% if (page < totalPage) { %>
+    <a href="?page=<%= page + 1 %>&limit=<%= limit %>&sort=<%= sort %>"
+      >Trang sau</a
+    >
+
+    <% } %>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "name": "manage_product",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/MeanHoang/manage_product_koajs#readme",
+  "bugs": {
+    "url": "https://github.com/MeanHoang/manage_product_koajs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeanHoang/manage_product_koajs.git"
+  },
+  "license": "ISC",
+  "author": "MeanHoang",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-ejs": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

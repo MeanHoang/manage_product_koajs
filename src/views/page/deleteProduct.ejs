@@ -1,0 +1,10 @@
+<!-- <%= JSON.stringify(product) %> -->
+
+<form action="/delete/<%=product.id%>" method="POST">
+  <div>
+    <label>Bạn có chắc muốn xóa người dùng với id</label>
+    <input type="number" name="name" value="<%=product.id%>" required />
+  </div>
+  <button type="submit">Xóa sản phẩm</button>
+  <a href="/products"><button type="button">Hủy</button></a>
+</form>
