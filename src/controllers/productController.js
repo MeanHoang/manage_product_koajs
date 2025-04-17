@@ -24,7 +24,7 @@ async function testContext(ctx) {
 }
 async function getAllProduct(ctx) {
   try {
-    const { limit = 10, page = 1, sort = "asc" } = ctx.query;
+    const { limit = 10, page = 1, sort } = ctx.query;
     const { totalItem, totalPage, data } = await getAll(limit, page, sort);
     // console.log(">>> check gen faker: ", products);
     ctx.status = 200;

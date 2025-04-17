@@ -3,17 +3,22 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, "../models/product.json");
 const fs = require("fs");
 
-const getAll = async (limit = 10, page = 1, sort = "asc") => {
+const getAll = async (limit = 10, page = 1, sort) => {
   try {
     const data = products;
 
     // console.log(">>>check data product: ", data);
     //Sap xep phan tu
-    data.sort((a, b) => {
-      if (sort === "asc") return new Date(a.createdAt) - new Date(b.createdAt);
-      if (sort === "desc") return new Date(b.createdAt) - new Date(a.createdAt);
-      return 0;
-    });
+    console.log(sort);
+    if (sort != undefined) {
+      data.sort((a, b) => {
+        if (sort === "asc")
+          return new Date(a.createdAt) - new Date(b.createdAt);
+        if (sort === "desc")
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        return 0;
+      });
+    }
     //Phan trang
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
