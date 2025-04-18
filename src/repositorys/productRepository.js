@@ -5,7 +5,7 @@ const fs = require("fs");
 
 const getAll = async (limit = 10, page = 1, sort) => {
   try {
-    const data = products;
+    const data = [...products];
 
     // console.log(">>>check data product: ", data);
     //Sap xep phan tu
